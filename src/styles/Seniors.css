@@ -1,0 +1,214 @@
+/* Container */
+.seniors-page {
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #66c2a5, #b2f7ef);
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222; /* Default dark text */
+}
+
+/* Heading */
+.seniors-welcome {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #fff; /* Keep white for big heading */
+  animation: seniors-glow 2s infinite alternate,
+    seniors-fadeDown 1s ease forwards;
+}
+
+.seniors-stream-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff; /* Keep white for section heading */
+  animation: seniors-fadeDown 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Back Button */
+.back-btn {
+  margin: 10px 0 20px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #ff7043;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #f4511e;
+  transform: scale(1.05);
+}
+
+/* Grid */
+.seniors-stream-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 15px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Card */
+.seniors-stream-bar {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 320px;
+  max-width: 280px;
+  margin: 0 auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: seniors-fadeSlideIn 0.8s forwards;
+  position: relative;
+  color: #222; /* Dark text inside cards */
+}
+
+/* Card Hover Animations */
+.seniors-stream-bar:nth-child(1) { animation-delay: 0.2s; }
+.seniors-stream-bar:nth-child(2) { animation-delay: 0.4s; }
+.seniors-stream-bar:nth-child(3) { animation-delay: 0.6s; }
+
+.seniors-stream-bar:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Image Placeholder */
+.seniors-stream-placeholder {
+  flex: 1;
+  background: #d0f0f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.seniors-stream-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+
+.seniors-stream-bar:hover .seniors-stream-image {
+  transform: scale(1.1) rotate(1.5deg);
+}
+
+/* Footer (Category Titles) */
+.seniors-stream-footer {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333; /* Darker text for readability */
+  border-top: 1px solid #d0f0f4;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.seniors-stream-bar:hover .seniors-stream-footer {
+  color: #66c2a5; /* Accent color on hover */
+  transform: scale(1.04);
+}
+
+/* Buttons (Videos) */
+.watch-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 6px;
+  color: #fff; /* Button text white */
+}
+
+.watch-btn {
+  background: #673ab7;
+}
+
+.watch-btn:hover {
+  background: #5e35b1;
+  transform: scale(1.05);
+}
+
+/* Videos Container */
+.videos-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #222; /* Ensure dark text in video cards */
+}
+
+.video-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #333; /* Dark readable titles */
+}
+
+.video-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Video Player */
+.video-player-wrapper {
+  margin-top: 20px;
+  color: #fff; /* Keep player title visible on bg */
+}
+
+.video-player-wrapper h2 {
+  margin-bottom: 15px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Animations */
+@keyframes seniors-fadeSlideIn {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes seniors-fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes seniors-glow {
+  from { text-shadow: 0 0 10px yellow; }
+  to { text-shadow: 0 0 20px gold; }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .seniors-stream-grid,
+  .videos-container { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .seniors-stream-grid,
+  .videos-container { grid-template-columns: 1fr; }
+  .seniors-stream-bar { max-width: 90%; height: auto; }
+}

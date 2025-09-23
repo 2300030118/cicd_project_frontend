@@ -1,0 +1,282 @@
+/* ================== Parents Container ================== */
+.parents-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c3ecff, #ffffff);
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================== Floating Bubbles ================== */
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation-name: float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+}
+
+/* ================== Headings ================== */
+.parents-heading,
+.parents-heading-main {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0b3d91;
+  margin: 20px 0;
+  position: relative;
+  z-index: 5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Responsive Headings */
+@media (max-width: 768px) {
+  .parents-heading,
+  .parents-heading-main {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .parents-heading,
+  .parents-heading-main {
+    font-size: 1.2rem;
+  }
+}
+
+/* ================== Login & Reset Containers ================== */
+.parents-login,
+.forgot-password-container,
+.reset-password-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  z-index: 5;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.parents-login:hover,
+.forgot-password-container:hover,
+.reset-password-container:hover {
+  transform: translateY(-5px);
+}
+
+.parents-login input,
+.forgot-password-container input,
+.reset-password-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+.parents-login input:focus,
+.forgot-password-container input:focus,
+.reset-password-container input:focus {
+  border-color: #0b3d91;
+  outline: none;
+}
+
+.parents-login button,
+.forgot-password-container button,
+.reset-password-container button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0b3d91;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.parents-login button:hover,
+.forgot-password-container button:hover,
+.reset-password-container button:hover {
+  background: #062c6f;
+  transform: translateY(-2px);
+}
+
+.forgot-password,
+.reset-password,
+.forgot-password-container p,
+.reset-password-container p {
+  color: #0b3d91;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+.forgot-password:hover,
+.reset-password:hover,
+.forgot-password-container p:hover,
+.reset-password-container p:hover {
+  color: #062c6f;
+}
+
+/* ================== Bars Container ================== */
+.bars-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+.parent-bar {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px;
+  border-radius: 15px;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.parent-bar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.parent-bar img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.parent-bar p {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0b3d91;
+}
+
+/* ================== Video Page ================== */
+.video-page {
+  z-index: 5;
+  position: relative;
+  padding: 15px;
+}
+
+.back-btn {
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0b3d91;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.back-btn:hover {
+  background-color: #062c6f;
+  transform: translateY(-2px);
+}
+
+/* ================== Media Page Grid ================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+.grid-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.grid-item p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #0b3d91;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0b3d91;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 2px 0;
+}
+.button-group button:hover {
+  background-color: #062c6f;
+  transform: translateY(-2px);
+}
+
+/* ================== Categories Container ================== */
+.categories-container {
+  text-align: center;
+  margin-top: 20px;
+  z-index: 5;
+  position: relative;
+}
+
+.categories-container h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #0b3d91;
+}
+
+.categories-container button {
+  margin: 5px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0b3d91;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.categories-container button:hover {
+  background-color: #062c6f;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,170 @@
+/* ===========================
+   Global Styles
+   =========================== */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #141414; /* Netflix-like dark */
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   Language Selector Buttons
+   =========================== */
+.language-selector {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.language-selector button {
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.language-selector button.selected {
+  background-color: #e50914; /* Netflix Red */
+  color: #fff;
+}
+
+.language-selector button:hover:not(.selected) {
+  background-color: #555;
+}
+
+/* ===========================
+   Category Rows
+   =========================== */
+.category-row {
+  margin-bottom: 40px;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 12px 16px;
+}
+
+.category-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-left: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for all browsers */
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+.category-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===========================
+   Cards (Movies/Shows/Music)
+   =========================== */
+.card {
+  min-width: 200px;
+  max-width: 200px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.card h3 {
+  margin: 8px 0 4px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ===========================
+   Video Player
+   =========================== */
+.video-player-container {
+  width: 100%;
+  max-height: 500px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+.video-player-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===========================
+   Responsive Layout
+   =========================== */
+
+/* Mobile: single card visible */
+@media (max-width: 640px) {
+  .card {
+    min-width: 150px;
+    max-width: 150px;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Tablet: 2-3 cards visible */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card {
+    min-width: 180px;
+    max-width: 180px;
+  }
+
+  .card img {
+    height: 250px;
+  }
+}
+
+/* Desktop: 3-5 cards visible */
+@media (min-width: 1025px) {
+  .card {
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+  .card img {
+    height: 300px;
+  }
+}
